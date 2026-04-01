@@ -488,7 +488,14 @@ section { padding: 5rem 1.5rem; }
 .photos-section .section-title { color: white; }
 .photos-section .section-subtitle { color: var(--green-light); }
 
-.carousel-wrapper { position: relative; max-width: 900px; margin: 0 auto; }
+.carousel-wrapper { position: relative; max-width: 1100px; margin: 0 auto; }
+
+@media (max-width: 768px) {
+  .carousel-slide { flex: 0 0 calc(50% - 0.5rem); }
+}
+@media (max-width: 480px) {
+  .carousel-slide { flex: 0 0 80vw; }
+}
 
 .carousel-track {
   display: flex;
@@ -502,7 +509,7 @@ section { padding: 5rem 1.5rem; }
 .carousel-track::-webkit-scrollbar { display: none; }
 
 .carousel-slide {
-  flex: 0 0 min(80vw, 500px);
+  flex: 0 0 calc(25% - 0.75rem);
   scroll-snap-align: center;
   border-radius: 12px;
   overflow: hidden;
@@ -1319,7 +1326,7 @@ footer p { font-size: 0.85rem; }
   <img src="photos/logo-fbgt-small.png" alt="FBGT" style="height:48px; margin-bottom:0.5rem; filter: drop-shadow(0 2px 8px rgba(0,0,0,0.3));">
   <div class="footer-logo">Team FBGT</div>
   <p>Since 2019 — Golf Weekend Chantilly — 5-7 Juin 2026</p>
-  <p style="margin-top:0.5rem; font-size:0.75rem; opacity:0.5;">Organisé par Quentin</p>
+  <p style="margin-top:0.5rem; font-size:0.75rem; opacity:0.5;">Organisé par Quentin et Jean</p>
 </footer>
 
 <script>
@@ -1352,6 +1359,18 @@ carousel.addEventListener('scroll', () => {
   const active = Math.round(carousel.scrollLeft / sw);
   dotsC.querySelectorAll('.carousel-dot').forEach((d, i) => d.classList.toggle('active', i === active));
 });
+
+// Auto-scroll carousel
+let autoScroll = setInterval(() => {
+  const sw = slides[0].offsetWidth + 16;
+  if (carousel.scrollLeft + carousel.offsetWidth >= carousel.scrollWidth - 10) {
+    carousel.scrollTo({ left: 0, behavior: 'smooth' });
+  } else {
+    carousel.scrollBy({ left: sw, behavior: 'smooth' });
+  }
+}, 3500);
+
+carousel.addEventListener('pointerdown', () => clearInterval(autoScroll));
 </script>
 
 <!-- ═══ AUDIO PLAYER ═══ -->
