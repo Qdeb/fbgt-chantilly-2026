@@ -1,0 +1,1266 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>FBGT Golf Weekend — Chantilly 2026</title>
+<meta name="description" content="Team FBGT Golf Weekend — Chantilly, 5-7 Juin 2026">
+<meta property="og:title" content="FBGT Golf Weekend — Chantilly 2026">
+<meta property="og:description" content="3 jours de golf entre amis à Chantilly. Château de Raray, Apremont, Le Grand Pavillon.">
+<meta property="og:type" content="website">
+<link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>⛳</text></svg>">
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;0,900;1,400&family=DM+Sans:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+<style>
+:root {
+  --green-deep: #1a3a2a;
+  --green-mid: #2d5a3f;
+  --green-light: #4a8b6a;
+  --green-pale: #e8f0eb;
+  --gold: #c9a84c;
+  --gold-light: #e8d48b;
+  --cream: #f7f4ee;
+  --charcoal: #2a2a2a;
+  --white: #ffffff;
+  --shadow: rgba(26,58,42,0.15);
+}
+
+* { margin:0; padding:0; box-sizing:border-box; }
+html { scroll-behavior: smooth; }
+
+body {
+  font-family: 'DM Sans', sans-serif;
+  background: var(--cream);
+  color: var(--charcoal);
+  overflow-x: hidden;
+}
+
+/* ─── NAV ─── */
+.nav {
+  position: fixed;
+  top: 0; left: 0; right: 0;
+  z-index: 100;
+  padding: 1rem 2rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  transition: all 0.3s;
+}
+
+.nav.scrolled {
+  background: rgba(26,58,42,0.95);
+  backdrop-filter: blur(10px);
+  box-shadow: 0 2px 20px rgba(0,0,0,0.2);
+}
+
+.nav-logo {
+  font-family: 'Playfair Display', serif;
+  color: var(--gold);
+  font-size: 1.1rem;
+  font-weight: 700;
+  text-decoration: none;
+}
+
+.nav-links { display: flex; gap: 1.5rem; list-style: none; }
+
+.nav-links a {
+  color: rgba(255,255,255,0.7);
+  text-decoration: none;
+  font-size: 0.85rem;
+  font-weight: 500;
+  transition: color 0.2s;
+  letter-spacing: 0.5px;
+}
+
+.nav-links a:hover { color: var(--gold); }
+
+@media (max-width: 768px) { .nav-links { display: none; } }
+
+/* ─── HERO ─── */
+.hero {
+  min-height: 100vh;
+  background: var(--green-deep);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  padding: 2rem;
+  position: relative;
+  overflow: hidden;
+}
+
+.hero::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background:
+    radial-gradient(ellipse at 20% 50%, rgba(74,139,106,0.3) 0%, transparent 60%),
+    radial-gradient(ellipse at 80% 30%, rgba(201,168,76,0.15) 0%, transparent 50%),
+    radial-gradient(ellipse at 50% 80%, rgba(45,90,63,0.4) 0%, transparent 60%);
+}
+
+.hero-content { position: relative; z-index: 1; }
+
+.hero-logo {
+  width: 160px;
+  height: auto;
+  margin-bottom: 2rem;
+  animation: fadeInDown 1s ease;
+  filter: drop-shadow(0 4px 12px rgba(0,0,0,0.3));
+}
+
+.hero h1 {
+  font-family: 'Playfair Display', serif;
+  font-size: clamp(2.5rem, 8vw, 5.5rem);
+  color: var(--white);
+  font-weight: 900;
+  line-height: 1.05;
+  margin-bottom: 1rem;
+  animation: fadeInUp 1s ease 0.2s both;
+}
+
+.hero h1 em { font-style: italic; color: var(--gold); }
+
+.hero-subtitle {
+  font-size: clamp(1rem, 3vw, 1.4rem);
+  color: var(--green-light);
+  font-weight: 300;
+  letter-spacing: 3px;
+  text-transform: uppercase;
+  margin-bottom: 0.5rem;
+  animation: fadeInUp 1s ease 0.4s both;
+}
+
+.hero-date {
+  font-family: 'Playfair Display', serif;
+  font-size: clamp(1.2rem, 4vw, 2rem);
+  color: var(--gold-light);
+  margin-top: 1.5rem;
+  animation: fadeInUp 1s ease 0.6s both;
+}
+
+.hero-scroll {
+  position: absolute;
+  bottom: 2rem;
+  left: 50%;
+  transform: translateX(-50%);
+  color: var(--green-light);
+  font-size: 0.8rem;
+  letter-spacing: 3px;
+  text-transform: uppercase;
+  animation: bounce 2s infinite;
+  z-index: 1;
+  text-decoration: none;
+}
+
+/* ─── SHARED ─── */
+section { padding: 5rem 1.5rem; }
+
+.section-title {
+  font-family: 'Playfair Display', serif;
+  font-size: clamp(2rem, 5vw, 3rem);
+  color: var(--green-deep);
+  text-align: center;
+  margin-bottom: 0.5rem;
+}
+
+.section-subtitle {
+  text-align: center;
+  color: var(--green-mid);
+  font-weight: 300;
+  font-size: 1.05rem;
+  margin-bottom: 3rem;
+  letter-spacing: 1px;
+}
+
+.container { max-width: 1100px; margin: 0 auto; }
+
+/* ─── PARTICIPANTS ─── */
+.participants-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(110px, 1fr));
+  gap: 1.5rem;
+  max-width: 700px;
+  margin: 0 auto;
+}
+
+.participant { text-align: center; }
+
+.participant-avatar {
+  width: 76px; height: 76px;
+  border-radius: 50%;
+  background: var(--green-mid);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 0 auto 0.7rem;
+  font-family: 'Playfair Display', serif;
+  font-size: 1.4rem;
+  font-weight: 700;
+  color: var(--white);
+  border: 3px solid var(--gold);
+}
+
+.participant-name { font-weight: 600; font-size: 0.9rem; }
+.participant-status { font-size: 0.75rem; color: var(--green-light); margin-top: 2px; }
+
+.participant-open .participant-avatar {
+  background: transparent;
+  border-style: dashed;
+  color: var(--gold);
+}
+
+/* ─── PROGRAMME ─── */
+.programme-grid { display: grid; gap: 2rem; }
+
+.day-card {
+  background: var(--white);
+  border-radius: 16px;
+  overflow: hidden;
+  box-shadow: 0 4px 24px var(--shadow);
+  transition: transform 0.3s;
+}
+
+.day-card:hover { transform: translateY(-4px); }
+
+.day-header {
+  background: var(--green-deep);
+  padding: 1.5rem 2rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.day-header h3 {
+  font-family: 'Playfair Display', serif;
+  color: var(--white);
+  font-size: 1.5rem;
+}
+
+.day-header .day-date {
+  color: var(--gold);
+  font-size: 0.9rem;
+  font-weight: 600;
+  letter-spacing: 1px;
+}
+
+.day-body { padding: 2rem; }
+
+.timeline-item {
+  display: flex;
+  gap: 1rem;
+  margin-bottom: 1.5rem;
+}
+
+.timeline-item:last-child { margin-bottom: 0; }
+
+.timeline-time {
+  min-width: 55px;
+  font-weight: 700;
+  color: var(--green-mid);
+  font-size: 0.9rem;
+  padding-top: 2px;
+}
+
+.timeline-dot {
+  width: 12px; height: 12px;
+  background: var(--gold);
+  border-radius: 50%;
+  flex-shrink: 0;
+  margin-top: 5px;
+  position: relative;
+}
+
+.timeline-item:not(:last-child) .timeline-dot::after {
+  content: '';
+  position: absolute;
+  top: 12px; left: 5px;
+  width: 2px;
+  height: calc(100% + 18px);
+  background: var(--green-pale);
+}
+
+.timeline-text h4 { font-weight: 600; margin-bottom: 2px; }
+.timeline-text p { font-size: 0.9rem; color: #666; line-height: 1.5; }
+
+/* ─── HOTEL ─── */
+.hotel-section { background: var(--green-deep); color: var(--white); }
+.hotel-section .section-title { color: var(--white); }
+.hotel-section .section-subtitle { color: var(--green-light); }
+
+.hotel-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 2rem;
+}
+
+@media (max-width: 768px) { .hotel-grid { grid-template-columns: 1fr; } }
+
+.hotel-info-card {
+  background: rgba(255,255,255,0.08);
+  border: 1px solid rgba(255,255,255,0.12);
+  border-radius: 16px;
+  padding: 2rem;
+  backdrop-filter: blur(10px);
+}
+
+.hotel-info-card h3 {
+  font-family: 'Playfair Display', serif;
+  color: var(--gold);
+  font-size: 1.4rem;
+  margin-bottom: 1rem;
+}
+
+.hotel-detail {
+  display: flex;
+  justify-content: space-between;
+  padding: 0.7rem 0;
+  border-bottom: 1px solid rgba(255,255,255,0.08);
+  font-size: 0.95rem;
+}
+
+.hotel-detail:last-child { border: none; }
+.hotel-detail .label { color: var(--green-light); }
+.hotel-detail .value { font-weight: 600; }
+
+.hotel-features {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 1rem;
+  margin-top: 1.5rem;
+}
+
+.hotel-feature {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  font-size: 0.9rem;
+  color: rgba(255,255,255,0.8);
+}
+
+.hotel-feature::before { content: '✓'; color: var(--gold); font-weight: 700; }
+
+/* ─── GOLFS ─── */
+.golf-cards {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 2rem;
+}
+
+@media (max-width: 768px) { .golf-cards { grid-template-columns: 1fr; } }
+
+.golf-card {
+  background: var(--white);
+  border-radius: 16px;
+  overflow: hidden;
+  box-shadow: 0 4px 24px var(--shadow);
+}
+
+.golf-card-header {
+  background: var(--green-mid);
+  padding: 1.5rem 2rem;
+  color: white;
+}
+
+.golf-card-header h3 { font-family: 'Playfair Display', serif; font-size: 1.3rem; }
+.golf-card-header .golf-day { font-size: 0.85rem; color: var(--gold-light); margin-top: 0.3rem; }
+.golf-card-body { padding: 2rem; }
+
+.golf-stat {
+  display: flex;
+  justify-content: space-between;
+  padding: 0.6rem 0;
+  border-bottom: 1px solid var(--green-pale);
+  font-size: 0.95rem;
+}
+
+.golf-stat:last-child { border: none; }
+.golf-stat .label { color: #888; }
+.golf-stat .value { font-weight: 600; }
+
+/* ─── BUDGET ─── */
+.budget-section { background: var(--white); }
+
+.budget-table-wrap {
+  overflow-x: auto;
+  border-radius: 16px;
+  box-shadow: 0 4px 24px var(--shadow);
+}
+
+.budget-table { width: 100%; border-collapse: collapse; font-size: 0.95rem; }
+
+.budget-table thead th {
+  background: var(--green-deep);
+  color: var(--white);
+  padding: 1rem 1.5rem;
+  text-align: left;
+  font-weight: 600;
+}
+
+.budget-table tbody td {
+  padding: 0.85rem 1.5rem;
+  border-bottom: 1px solid var(--green-pale);
+}
+
+.budget-table tbody tr:last-child td { border: none; }
+.budget-table tbody tr:nth-child(even) { background: var(--green-pale); }
+
+.budget-total { background: var(--green-deep) !important; }
+
+.budget-total td {
+  color: var(--white) !important;
+  font-weight: 700;
+  font-size: 1.05rem;
+  border: none !important;
+}
+
+.budget-note {
+  text-align: center;
+  margin-top: 1.5rem;
+  color: #888;
+  font-size: 0.9rem;
+  font-style: italic;
+}
+
+/* ─── TRANSPORT ─── */
+.transport-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 2rem;
+}
+
+@media (max-width: 768px) { .transport-grid { grid-template-columns: 1fr; } }
+
+.transport-card {
+  background: var(--white);
+  border-radius: 16px;
+  overflow: hidden;
+  box-shadow: 0 4px 24px var(--shadow);
+}
+
+.transport-header {
+  padding: 1.5rem 2rem;
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  color: white;
+}
+
+.transport-header.lille { background: var(--green-deep); }
+.transport-header.paris { background: var(--green-mid); }
+
+.transport-header h3 { font-family: 'Playfair Display', serif; font-size: 1.3rem; }
+.transport-header .emoji { font-size: 1.5rem; }
+.transport-body { padding: 2rem; }
+
+.transport-option {
+  margin-bottom: 1.5rem;
+  padding-bottom: 1.5rem;
+  border-bottom: 1px solid var(--green-pale);
+}
+
+.transport-option:last-child { margin-bottom: 0; padding-bottom: 0; border: none; }
+
+.transport-option h4 {
+  font-weight: 700;
+  margin-bottom: 0.5rem;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.transport-option p { font-size: 0.9rem; color: #666; line-height: 1.6; }
+
+.transport-tag {
+  display: inline-block;
+  background: var(--gold);
+  color: var(--green-deep);
+  font-size: 0.7rem;
+  font-weight: 700;
+  padding: 2px 8px;
+  border-radius: 4px;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+
+/* ─── CAROUSEL ─── */
+.photos-section { background: var(--green-deep); color: white; overflow: hidden; }
+.photos-section .section-title { color: white; }
+.photos-section .section-subtitle { color: var(--green-light); }
+
+.carousel-wrapper { position: relative; max-width: 900px; margin: 0 auto; }
+
+.carousel-track {
+  display: flex;
+  overflow-x: auto;
+  scroll-snap-type: x mandatory;
+  gap: 1rem;
+  padding: 1rem 0 2rem;
+  scrollbar-width: none;
+}
+
+.carousel-track::-webkit-scrollbar { display: none; }
+
+.carousel-slide {
+  flex: 0 0 min(80vw, 500px);
+  scroll-snap-align: center;
+  border-radius: 12px;
+  overflow: hidden;
+  aspect-ratio: 4/3;
+  position: relative;
+}
+
+.carousel-slide img { width: 100%; height: 100%; object-fit: cover; display: block; }
+
+.carousel-slide .caption {
+  position: absolute;
+  bottom: 0; left: 0; right: 0;
+  padding: 2rem 1rem 1rem;
+  background: linear-gradient(transparent, rgba(0,0,0,0.7));
+  color: white;
+  font-size: 0.85rem;
+}
+
+.carousel-dots { display: flex; justify-content: center; gap: 8px; margin-top: 1rem; }
+
+.carousel-dot {
+  width: 8px; height: 8px;
+  border-radius: 50%;
+  background: rgba(255,255,255,0.3);
+  border: none;
+  cursor: pointer;
+  transition: all 0.3s;
+  padding: 0;
+}
+
+.carousel-dot.active { background: var(--gold); transform: scale(1.3); }
+
+/* ─── EDITIONS TIMELINE ─── */
+.editions-section { background: var(--cream); }
+
+.editions-timeline {
+  position: relative;
+  max-width: 800px;
+  margin: 0 auto;
+}
+
+.editions-timeline::before {
+  content: '';
+  position: absolute;
+  left: 50%;
+  top: 0; bottom: 0;
+  width: 3px;
+  background: var(--green-light);
+  transform: translateX(-50%);
+}
+
+@media (max-width: 768px) {
+  .editions-timeline::before { left: 20px; }
+}
+
+.edition-item {
+  display: flex;
+  align-items: flex-start;
+  margin-bottom: 3rem;
+  position: relative;
+}
+
+.edition-item:nth-child(odd) { flex-direction: row; }
+.edition-item:nth-child(even) { flex-direction: row-reverse; }
+
+@media (max-width: 768px) {
+  .edition-item,
+  .edition-item:nth-child(even) { flex-direction: row; }
+}
+
+.edition-dot {
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 20px; height: 20px;
+  background: var(--gold);
+  border: 4px solid var(--cream);
+  border-radius: 50%;
+  z-index: 2;
+}
+
+@media (max-width: 768px) { .edition-dot { left: 20px; } }
+
+.edition-content {
+  width: 42%;
+  background: var(--white);
+  border-radius: 12px;
+  overflow: hidden;
+  box-shadow: 0 4px 20px var(--shadow);
+}
+
+.edition-item:nth-child(odd) .edition-content { margin-right: auto; margin-left: 0; }
+.edition-item:nth-child(even) .edition-content { margin-left: auto; margin-right: 0; }
+
+@media (max-width: 768px) {
+  .edition-content { width: calc(100% - 50px); margin-left: 50px !important; margin-right: 0 !important; }
+}
+
+.edition-img { width: 100%; aspect-ratio: 16/10; object-fit: cover; display: block; }
+
+.edition-info { padding: 1.2rem; }
+
+.edition-year {
+  font-family: 'Playfair Display', serif;
+  font-size: 1.3rem;
+  font-weight: 900;
+  color: var(--green-deep);
+}
+
+.edition-label {
+  font-size: 0.75rem;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  color: var(--gold);
+  font-weight: 600;
+}
+
+.edition-desc { font-size: 0.85rem; color: #666; margin-top: 0.3rem; line-height: 1.5; }
+
+/* ─── FOOTER ─── */
+footer {
+  background: var(--green-deep);
+  text-align: center;
+  padding: 3rem 1.5rem;
+  color: var(--green-light);
+}
+
+footer .footer-logo {
+  font-family: 'Playfair Display', serif;
+  font-size: 1.5rem;
+  color: var(--gold);
+  margin-bottom: 0.5rem;
+}
+
+footer p { font-size: 0.85rem; }
+
+/* ─── ANIMATIONS ─── */
+@keyframes fadeInUp {
+  from { opacity: 0; transform: translateY(30px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes fadeInDown {
+  from { opacity: 0; transform: translateY(-20px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes bounce {
+  0%, 100% { transform: translateX(-50%) translateY(0); }
+  50% { transform: translateX(-50%) translateY(8px); }
+}
+
+.fade-in {
+  opacity: 0;
+  transform: translateY(20px);
+  transition: all 0.8s ease;
+}
+
+.fade-in.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+</style>
+</head>
+<body>
+
+<nav class="nav" id="nav">
+  <a href="#" class="nav-logo"><img src="photos/logo-fbgt-small.png" alt="FBGT" style="height:32px; vertical-align:middle; margin-right:6px;">2026</a>
+  <ul class="nav-links">
+    <li><a href="#programme">Programme</a></li>
+    <li><a href="#hotel">Hôtel</a></li>
+    <li><a href="#golfs">Golfs</a></li>
+    <li><a href="#budget">Budget</a></li>
+    <li><a href="#transport">Transport</a></li>
+    <li><a href="#photos">Photos</a></li>
+  </ul>
+</nav>
+
+<!-- ═══ HERO ═══ -->
+<section class="hero">
+  <div class="hero-content">
+    <img src="photos/logo-fbgt.png" alt="Team FBGT" class="hero-logo">
+    <p class="hero-subtitle">Team FBGT — Since 2019</p>
+    <h1>Golf Weekend<br><em>Chantilly</em></h1>
+    <p class="hero-date">5 — 7 Juin 2026</p>
+  </div>
+  <a href="#participants" class="hero-scroll">↓ Découvrir</a>
+</section>
+
+<!-- ═══ PARTICIPANTS ═══ -->
+<section id="participants" class="fade-in">
+  <div class="container">
+    <h2 class="section-title">L'Équipe</h2>
+    <p class="section-subtitle">8 places — 7 confirmés</p>
+    <div class="participants-grid">
+      <div class="participant">
+        <div class="participant-avatar">QD</div>
+        <div class="participant-name">Quentin</div>
+        <div class="participant-status">Organisateur</div>
+      </div>
+      <div class="participant">
+        <div class="participant-avatar">JD</div>
+        <div class="participant-name">Jean</div>
+        <div class="participant-status">Confirmé</div>
+      </div>
+      <div class="participant">
+        <div class="participant-avatar">AB</div>
+        <div class="participant-name">Alex</div>
+        <div class="participant-status">Confirmé</div>
+      </div>
+      <div class="participant">
+        <div class="participant-avatar">NB</div>
+        <div class="participant-name">Nicolas</div>
+        <div class="participant-status">Confirmé</div>
+      </div>
+      <div class="participant">
+        <div class="participant-avatar">L</div>
+        <div class="participant-name">Louis</div>
+        <div class="participant-status">Confirmé</div>
+      </div>
+      <div class="participant">
+        <div class="participant-avatar">R</div>
+        <div class="participant-name">Roukie</div>
+        <div class="participant-status">Confirmé</div>
+      </div>
+      <div class="participant">
+        <div class="participant-avatar">MR</div>
+        <div class="participant-name">Maxime</div>
+        <div class="participant-status">Confirmé</div>
+      </div>
+      <div class="participant participant-open">
+        <div class="participant-avatar">?</div>
+        <div class="participant-name">1 place dispo</div>
+        <div class="participant-status">À confirmer</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ═══ PROGRAMME ═══ -->
+<section id="programme" class="fade-in">
+  <div class="container">
+    <h2 class="section-title">Le Programme</h2>
+    <p class="section-subtitle">3 jours de golf, gastronomie et bonne humeur</p>
+    <div class="programme-grid">
+
+      <div class="day-card">
+        <div class="day-header">
+          <h3>Vendredi</h3>
+          <span class="day-date">5 JUIN</span>
+        </div>
+        <div class="day-body">
+          <div class="timeline-item">
+            <span class="timeline-time">16h00</span>
+            <div class="timeline-dot"></div>
+            <div class="timeline-text">
+              <h4>Check-in Hôtel</h4>
+              <p>Le Grand Pavillon Chantilly — Installation dans les chambres</p>
+            </div>
+          </div>
+          <div class="timeline-item">
+            <span class="timeline-time">17h00</span>
+            <div class="timeline-dot"></div>
+            <div class="timeline-text">
+              <h4>Piscine & Spa</h4>
+              <p>Piscine intérieure chauffée, hammam, sauna — 1 200 m² de détente</p>
+            </div>
+          </div>
+          <div class="timeline-item">
+            <span class="timeline-time">20h00</span>
+            <div class="timeline-dot"></div>
+            <div class="timeline-text">
+              <h4>Dîner à l'hôtel</h4>
+              <p>Restaurant Craft — Budget ~50 €/pers</p>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="day-card">
+        <div class="day-header">
+          <h3>Samedi</h3>
+          <span class="day-date">6 JUIN</span>
+        </div>
+        <div class="day-body">
+          <div class="timeline-item">
+            <span class="timeline-time">09h00</span>
+            <div class="timeline-dot"></div>
+            <div class="timeline-text">
+              <h4>Petit-déjeuner buffet</h4>
+              <p>Option buffet à l'hôtel — 25 € sur place</p>
+            </div>
+          </div>
+          <div class="timeline-item">
+            <span class="timeline-time">10h00</span>
+            <div class="timeline-dot"></div>
+            <div class="timeline-text">
+              <h4>Matinée libre</h4>
+              <p>Piscine, spa, practice ou balade dans le parc de 17 hectares</p>
+            </div>
+          </div>
+          <div class="timeline-item">
+            <span class="timeline-time">12h00</span>
+            <div class="timeline-dot"></div>
+            <div class="timeline-text">
+              <h4>Déjeuner au Golf</h4>
+              <p>Restaurant La Verrière, Château de Raray — Menu E/P/D ~36 €</p>
+            </div>
+          </div>
+          <div class="timeline-item">
+            <span class="timeline-time">14h00</span>
+            <div class="timeline-dot"></div>
+            <div class="timeline-text">
+              <h4>⛳ Golf — Château de Raray</h4>
+              <p>Parcours La Licorne — 18 trous, par 72 — Départs bloqués 14h–14h40</p>
+            </div>
+          </div>
+          <div class="timeline-item">
+            <span class="timeline-time">20h00</span>
+            <div class="timeline-dot"></div>
+            <div class="timeline-text">
+              <h4>Dîner à l'hôtel</h4>
+              <p>Restaurant du Grand Pavillon — Budget ~80 €/pers</p>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="day-card">
+        <div class="day-header">
+          <h3>Dimanche</h3>
+          <span class="day-date">7 JUIN</span>
+        </div>
+        <div class="day-body">
+          <div class="timeline-item">
+            <span class="timeline-time">08h00</span>
+            <div class="timeline-dot"></div>
+            <div class="timeline-text">
+              <h4>Petit-déjeuner & Check-out</h4>
+              <p>Buffet option 25 € — Check-out avant 11h</p>
+            </div>
+          </div>
+          <div class="timeline-item">
+            <span class="timeline-time">10h00</span>
+            <div class="timeline-dot"></div>
+            <div class="timeline-text">
+              <h4>⛳ Golf — Apremont</h4>
+              <p>18 trous, par 72 — Départ le matin + panier sandwich</p>
+            </div>
+          </div>
+          <div class="timeline-item">
+            <span class="timeline-time">15h00</span>
+            <div class="timeline-dot"></div>
+            <div class="timeline-text">
+              <h4>Retour</h4>
+              <p>Fin du week-end — Route ou train vers Lille / Paris</p>
+            </div>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- ═══ HOTEL ═══ -->
+<section id="hotel" class="hotel-section fade-in">
+  <div class="container">
+    <h2 class="section-title">L'Hôtel</h2>
+    <p class="section-subtitle">Le Grand Pavillon Chantilly ★★★★</p>
+    <div class="hotel-grid">
+      <div class="hotel-info-card">
+        <h3>Réservation confirmée</h3>
+        <div class="hotel-detail">
+          <span class="label">Dates</span>
+          <span class="value">Ven 5 → Dim 7 juin</span>
+        </div>
+        <div class="hotel-detail">
+          <span class="label">Chambres</span>
+          <span class="value">4 chambres (2 nuits)</span>
+        </div>
+        <div class="hotel-detail">
+          <span class="label">Capacité</span>
+          <span class="value">8 adultes</span>
+        </div>
+        <div class="hotel-detail">
+          <span class="label">Check-in</span>
+          <span class="value">À partir de 16h</span>
+        </div>
+        <div class="hotel-detail">
+          <span class="label">Check-out</span>
+          <span class="value">Avant 11h</span>
+        </div>
+        <div class="hotel-detail">
+          <span class="label">Total hôtel</span>
+          <span class="value" style="color: var(--gold);">1 730 € (≈216 €/pers)</span>
+        </div>
+        <div class="hotel-detail">
+          <span class="label">N° confirmation</span>
+          <span class="value">#5356236667</span>
+        </div>
+      </div>
+      <div class="hotel-info-card">
+        <h3>Équipements</h3>
+        <div class="hotel-features">
+          <div class="hotel-feature">Piscine intérieure chauffée</div>
+          <div class="hotel-feature">Spa Sothys 1 200 m²</div>
+          <div class="hotel-feature">Hammam & Sauna</div>
+          <div class="hotel-feature">Salle de fitness</div>
+          <div class="hotel-feature">2 restaurants</div>
+          <div class="hotel-feature">Bar à cocktails</div>
+          <div class="hotel-feature">Parking gratuit</div>
+          <div class="hotel-feature">WiFi gratuit</div>
+          <div class="hotel-feature">Parc de 17 hectares</div>
+          <div class="hotel-feature">5 min du Château de Chantilly</div>
+        </div>
+        <p style="margin-top:1.5rem; font-size:0.85rem; color: rgba(255,255,255,0.5);">
+          4 Route de Senlis, 60500 Vineuil-Saint-Firmin<br>
+          Tél : +33 3 65 36 12 34 —
+          <a href="https://legrandpavillonchantilly.com/fr/" style="color:var(--gold);" target="_blank">Site web</a>
+        </p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ═══ GOLFS ═══ -->
+<section id="golfs" class="fade-in">
+  <div class="container">
+    <h2 class="section-title">Les Parcours</h2>
+    <p class="section-subtitle">Deux 18 trous d'exception dans l'Oise</p>
+    <div class="golf-cards">
+
+      <div class="golf-card">
+        <div class="golf-card-header">
+          <h3>Château de Raray</h3>
+          <div class="golf-day">Samedi 6 juin — 14h</div>
+        </div>
+        <div class="golf-card-body">
+          <div class="golf-stat"><span class="label">Parcours</span><span class="value">La Licorne</span></div>
+          <div class="golf-stat"><span class="label">Trous</span><span class="value">18 trous — Par 72</span></div>
+          <div class="golf-stat"><span class="label">Distance</span><span class="value">6 145 m (blancs)</span></div>
+          <div class="golf-stat"><span class="label">Slope</span><span class="value">133</span></div>
+          <div class="golf-stat"><span class="label">Green-fee</span><span class="value" style="color:var(--green-mid);">84 € <s style="color:#bbb;font-size:0.85rem;">105 €</s></span></div>
+          <div class="golf-stat"><span class="label">Style</span><span class="value">Boisé, forestier</span></div>
+          <p style="margin-top:1rem; font-size:0.85rem; color:#888; line-height:1.5;">
+            Forêt centenaire, château du 17e classé MH. Lieu de tournage de <em>La Belle et la Bête</em> de Cocteau. Déjeuner à La Verrière avant le départ.
+          </p>
+        </div>
+      </div>
+
+      <div class="golf-card">
+        <div class="golf-card-header" style="background: var(--green-deep);">
+          <h3>Golf d'Apremont</h3>
+          <div class="golf-day">Dimanche 7 juin — matin</div>
+        </div>
+        <div class="golf-card-body">
+          <div class="golf-stat"><span class="label">Parcours</span><span class="value">Apremont</span></div>
+          <div class="golf-stat"><span class="label">Trous</span><span class="value">18 trous — Par 72</span></div>
+          <div class="golf-stat"><span class="label">Distance</span><span class="value">6 395 m (blancs)</span></div>
+          <div class="golf-stat"><span class="label">Slope</span><span class="value">134</span></div>
+          <div class="golf-stat"><span class="label">Green-fee</span><span class="value">~100 € (WE)</span></div>
+          <div class="golf-stat"><span class="label">Style</span><span class="value">Anglo-saxon, doglegs</span></div>
+          <p style="margin-top:1rem; font-size:0.85rem; color:#888; line-height:1.5;">
+            120 hectares dans la pure tradition anglo-saxonne. Larges fairways, doglegs boisés, greens rapides. Panier sandwich pour le midi.
+          </p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ═══ BUDGET ═══ -->
+<section id="budget" class="budget-section fade-in">
+  <div class="container">
+    <h2 class="section-title">Le Budget</h2>
+    <p class="section-subtitle">Estimation par personne — base 8 participants</p>
+    <div class="budget-table-wrap">
+      <table class="budget-table">
+        <thead>
+          <tr><th>Poste</th><th>Détail</th><th style="text-align:right;">€/pers</th></tr>
+        </thead>
+        <tbody>
+          <tr><td>🏨 Hôtel (2 nuits)</td><td>Le Grand Pavillon — chambre double partagée</td><td style="text-align:right;">216 €</td></tr>
+          <tr><td>⛳ Green-fee Raray</td><td>La Licorne — tarif négocié</td><td style="text-align:right;">84 €</td></tr>
+          <tr><td>⛳ Green-fee Apremont</td><td>Apremont — tarif WE</td><td style="text-align:right;">~100 €</td></tr>
+          <tr><td>🍽️ Dîner vendredi</td><td>Restaurant hôtel</td><td style="text-align:right;">~50 €</td></tr>
+          <tr><td>🍽️ Déjeuner samedi</td><td>La Verrière — Menu E/P/D</td><td style="text-align:right;">~36 €</td></tr>
+          <tr><td>🍽️ Dîner samedi</td><td>Restaurant hôtel</td><td style="text-align:right;">~80 €</td></tr>
+          <tr><td>🥐 Petits-déj (×2)</td><td>Buffet hôtel — option sur place</td><td style="text-align:right;">~50 €</td></tr>
+          <tr><td>🥪 Sandwich dimanche</td><td>Panier repas golf Apremont</td><td style="text-align:right;">~15 €</td></tr>
+          <tr class="budget-total"><td>TOTAL ESTIMÉ</td><td>Hors transport</td><td style="text-align:right;">~630 €</td></tr>
+        </tbody>
+      </table>
+    </div>
+    <p class="budget-note">* Transport en sus — voir ci-dessous. Tarifs indicatifs.</p>
+  </div>
+</section>
+
+<!-- ═══ TRANSPORT ═══ -->
+<section id="transport" class="fade-in">
+  <div class="container">
+    <h2 class="section-title">Comment Venir</h2>
+    <p class="section-subtitle">Depuis Lille ou Paris — train ou voiture</p>
+    <div class="transport-grid">
+
+      <div class="transport-card">
+        <div class="transport-header lille">
+          <span class="emoji">🏠</span>
+          <h3>Depuis Lille</h3>
+        </div>
+        <div class="transport-body">
+          <div class="transport-option">
+            <h4>🚗 Voiture <span class="transport-tag">Recommandé</span></h4>
+            <p>
+              <strong>~1h50</strong> via A1 — 186 km<br>
+              Péage : ~19 € · Essence : ~25 €<br>
+              Parking gratuit à l'hôtel<br>
+              <strong>Covoiturage à 3–4 → ~15 €/pers A/R</strong>
+            </p>
+          </div>
+          <div class="transport-option">
+            <h4>🚆 Train</h4>
+            <p>
+              Lille Flandres → Paris Nord (TGV ~1h)<br>
+              Paris Nord → Chantilly-Gouvieux (TER ~25 min)<br>
+              <strong>Total : ~1h30–2h</strong> avec correspondance<br>
+              Budget : 30–60 € selon anticipation<br>
+              Puis taxi/navette gare → hôtel (~6 km)
+            </p>
+          </div>
+        </div>
+      </div>
+
+      <div class="transport-card">
+        <div class="transport-header paris">
+          <span class="emoji">🗼</span>
+          <h3>Depuis Paris</h3>
+        </div>
+        <div class="transport-body">
+          <div class="transport-option">
+            <h4>🚆 Train <span class="transport-tag">Recommandé</span></h4>
+            <p>
+              Paris Gare du Nord → Chantilly-Gouvieux<br>
+              <strong>~25 min</strong> en direct (TER)<br>
+              ~47 trains/jour — dès 3 € en TER<br>
+              Puis taxi/navette gare → hôtel (~6 km)
+            </p>
+          </div>
+          <div class="transport-option">
+            <h4>🚗 Voiture</h4>
+            <p>
+              <strong>~45 min</strong> via A1 — 50 km<br>
+              Péage : ~5 €<br>
+              Parking gratuit à l'hôtel
+            </p>
+          </div>
+        </div>
+      </div>
+
+    </div>
+    <p class="budget-note" style="margin-top:2rem;">💡 Il faudra des voitures sur place pour les golfs : hôtel → Raray (~20 min) et hôtel → Apremont (~15 min). On organise le covoiturage entre nous.</p>
+  </div>
+</section>
+
+<!-- ═══ PHOTOS CAROUSEL ═══ -->
+<section id="photos" class="photos-section fade-in">
+  <div class="container">
+    <h2 class="section-title">Les Souvenirs</h2>
+    <p class="section-subtitle">Flashback des éditions précédentes</p>
+    <div class="carousel-wrapper">
+      <div class="carousel-track" id="carousel">
+        <div class="carousel-slide">
+          <img src="photos/1000178117.jpg" alt="" loading="lazy">
+          <div class="caption">Le groupe au complet — golden hour sur le practice</div>
+        </div>
+        <div class="carousel-slide">
+          <img src="photos/1000178111.jpg" alt="" loading="lazy">
+          <div class="caption">Prêts pour le tee-off</div>
+        </div>
+        <div class="carousel-slide">
+          <img src="photos/1000178106.jpg" alt="" loading="lazy">
+          <div class="caption">Le style capillaire unique du FBGT</div>
+        </div>
+        <div class="carousel-slide">
+          <img src="photos/1000178108.jpg" alt="" loading="lazy">
+          <div class="caption">Même les mouettes viennent admirer le swing</div>
+        </div>
+        <div class="carousel-slide">
+          <img src="photos/1000178110.jpg" alt="" loading="lazy">
+          <div class="caption">Le roi du divot — fierté intacte</div>
+        </div>
+        <div class="carousel-slide">
+          <img src="photos/1000178114.jpg" alt="" loading="lazy">
+          <div class="caption">On joue par tous les temps</div>
+        </div>
+        <div class="carousel-slide">
+          <img src="photos/1000178120.jpg" alt="" loading="lazy">
+          <div class="caption">Selfie fairway</div>
+        </div>
+        <div class="carousel-slide">
+          <img src="photos/1000178112.jpg" alt="" loading="lazy">
+          <div class="caption">Le 19e trou — la récup</div>
+        </div>
+        <div class="carousel-slide">
+          <img src="photos/1000178109.jpg" alt="" loading="lazy">
+          <div class="caption">177 m du drapeau — 5 wood — c'est parti</div>
+        </div>
+        <div class="carousel-slide">
+          <img src="photos/1000178105.jpg" alt="" loading="lazy">
+          <div class="caption">Ambiance clubhouse</div>
+        </div>
+        <div class="carousel-slide">
+          <img src="photos/1000178115.jpg" alt="" loading="lazy">
+          <div class="caption">La soirée de gala</div>
+        </div>
+        <div class="carousel-slide">
+          <img src="photos/1000178107.jpg" alt="" loading="lazy">
+          <div class="caption">Le portrait Lincoln — quand tu joues devant un château</div>
+        </div>
+      </div>
+      <div class="carousel-dots" id="dots"></div>
+    </div>
+  </div>
+</section>
+
+<!-- ═══ EDITIONS TIMELINE ═══ -->
+<section id="editions" class="editions-section fade-in">
+  <div class="container">
+    <h2 class="section-title">Les Éditions</h2>
+    <p class="section-subtitle">L'histoire du Team FBGT</p>
+    <div class="editions-timeline">
+
+      <div class="edition-item">
+        <div class="edition-dot"></div>
+        <div class="edition-content">
+          <img class="edition-img" src="photos/1000178104.jpg" alt="" loading="lazy">
+          <div class="edition-info">
+            <div class="edition-label">Édition inaugurale</div>
+            <div class="edition-year">2019</div>
+            <div class="edition-desc">Naissance du Team FBGT et du trophée. Le début d'une tradition.</div>
+          </div>
+        </div>
+      </div>
+
+      <div class="edition-item">
+        <div class="edition-dot"></div>
+        <div class="edition-content">
+          <img class="edition-img" src="photos/1000178117.jpg" alt="" loading="lazy">
+          <div class="edition-info">
+            <div class="edition-label">Printemps</div>
+            <div class="edition-year">2021</div>
+            <div class="edition-desc">Le groupe s'agrandit. Golden hour sur le practice — le golf reprend après la pause Covid.</div>
+          </div>
+        </div>
+      </div>
+
+      <div class="edition-item">
+        <div class="edition-dot"></div>
+        <div class="edition-content">
+          <img class="edition-img" src="photos/1000178111.jpg" alt="" loading="lazy">
+          <div class="edition-info">
+            <div class="edition-label">Été</div>
+            <div class="edition-year">2022</div>
+            <div class="edition-desc">Parcours boisés, doglegs et fairways — les duos se forment.</div>
+          </div>
+        </div>
+      </div>
+
+      <div class="edition-item">
+        <div class="edition-dot"></div>
+        <div class="edition-content">
+          <img class="edition-img" src="photos/1000178108.jpg" alt="" loading="lazy">
+          <div class="edition-info">
+            <div class="edition-label">Été</div>
+            <div class="edition-year">2023</div>
+            <div class="edition-desc">Links en bord de mer. Le vent, les mouettes, et des scores… créatifs.</div>
+          </div>
+        </div>
+      </div>
+
+      <div class="edition-item">
+        <div class="edition-dot"></div>
+        <div class="edition-content">
+          <img class="edition-img" src="photos/1000178114.jpg" alt="" loading="lazy">
+          <div class="edition-info">
+            <div class="edition-label">Automne</div>
+            <div class="edition-year">2024</div>
+            <div class="edition-desc">Parapluie cassé, chaussures trempées — mais personne n'a abandonné.</div>
+          </div>
+        </div>
+      </div>
+
+      <div class="edition-item">
+        <div class="edition-dot"></div>
+        <div class="edition-content">
+          <img class="edition-img" src="photos/1000178105.jpg" alt="" loading="lazy">
+          <div class="edition-info">
+            <div class="edition-label">Printemps</div>
+            <div class="edition-year">2025</div>
+            <div class="edition-desc">Ambiance clubhouse — autographes et célébrations.</div>
+          </div>
+        </div>
+      </div>
+
+      <div class="edition-item">
+        <div class="edition-dot"></div>
+        <div class="edition-content" style="border: 3px solid var(--gold);">
+          <div class="edition-info" style="padding:2rem; text-align:center;">
+            <div class="edition-label">Prochaine édition</div>
+            <div class="edition-year" style="color:var(--gold); font-size:1.8rem;">2026</div>
+            <div class="edition-desc" style="font-size:1rem; font-weight:600; color:var(--green-deep);">Chantilly — 5-7 Juin<br>C'est maintenant !</div>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- ═══ FOOTER ═══ -->
+<footer>
+  <img src="photos/logo-fbgt-small.png" alt="FBGT" style="height:48px; margin-bottom:0.5rem; filter: drop-shadow(0 2px 8px rgba(0,0,0,0.3));">
+  <div class="footer-logo">Team FBGT</div>
+  <p>Since 2019 — Golf Weekend Chantilly — 5-7 Juin 2026</p>
+  <p style="margin-top:0.5rem; font-size:0.75rem; opacity:0.5;">Organisé par Quentin</p>
+</footer>
+
+<script>
+// Nav scroll
+window.addEventListener('scroll', () => {
+  document.getElementById('nav').classList.toggle('scrolled', window.scrollY > 50);
+});
+
+// Fade in on scroll
+const obs = new IntersectionObserver(entries => {
+  entries.forEach(e => { if (e.isIntersecting) e.target.classList.add('visible'); });
+}, { threshold: 0.1 });
+document.querySelectorAll('.fade-in').forEach(el => obs.observe(el));
+
+// Carousel dots
+const carousel = document.getElementById('carousel');
+const dotsC = document.getElementById('dots');
+const slides = carousel.querySelectorAll('.carousel-slide');
+
+slides.forEach((_, i) => {
+  const d = document.createElement('button');
+  d.className = 'carousel-dot' + (i === 0 ? ' active' : '');
+  d.setAttribute('aria-label', 'Photo ' + (i + 1));
+  d.onclick = () => slides[i].scrollIntoView({ behavior: 'smooth', inline: 'center', block: 'nearest' });
+  dotsC.appendChild(d);
+});
+
+carousel.addEventListener('scroll', () => {
+  const sw = slides[0].offsetWidth + 16;
+  const active = Math.round(carousel.scrollLeft / sw);
+  dotsC.querySelectorAll('.carousel-dot').forEach((d, i) => d.classList.toggle('active', i === active));
+});
+</script>
+</body>
+</html>
