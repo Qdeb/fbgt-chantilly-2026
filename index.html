@@ -1384,32 +1384,34 @@ const bgMusic = document.getElementById('bgMusic');
 const musicBtn = document.getElementById('musicBtn');
 bgMusic.volume = 0.3;
 
-// Auto-play on first user interaction
-function autoStart() {
+function startMusic() {
   bgMusic.play().then(() => {
     musicBtn.textContent = '🔊';
     musicBtn.classList.add('playing');
   }).catch(() => {});
-  document.removeEventListener('click', autoStart);
-  document.removeEventListener('scroll', autoStart);
-  document.removeEventListener('touchstart', autoStart);
 }
-document.addEventListener('click', autoStart);
-document.addEventListener('scroll', autoStart);
-document.addEventListener('touchstart', autoStart);
 
-musicBtn.addEventListener('click', (e) => {
-  e.stopPropagation();
+function toggleMusic() {
   if (bgMusic.paused) {
-    bgMusic.play();
-    musicBtn.textContent = '🔊';
-    musicBtn.classList.add('playing');
+    startMusic();
   } else {
     bgMusic.pause();
     musicBtn.textContent = '🔇';
     musicBtn.classList.remove('playing');
   }
-});
+}
+
+// Auto-start on first click/tap anywhere except the music button
+function autoStart(e) {
+  if (e.target === musicBtn || musicBtn.contains(e.target)) return;
+  startMusic();
+  document.removeEventListener('click', autoStart);
+  document.removeEventListener('touchstart', autoStart);
+}
+document.addEventListener('click', autoStart);
+document.addEventListener('touchstart', autoStart);
+
+musicBtn.addEventListener('click', toggleMusic);
 </script>
 </body>
 </html>
