@@ -789,7 +789,7 @@ footer p { font-size: 0.85rem; }
 <section id="programme" class="fade-in">
   <div class="container">
     <h2 class="section-title">Le Programme</h2>
-    <p class="section-subtitle">3 jours de golf, gastronomie et bonne humeur</p>
+    <p class="section-subtitle">2 jours de golf, de bitures, et de triche</p>
     <div class="programme-grid">
 
       <div class="day-card">
@@ -1365,7 +1365,22 @@ const bgMusic = document.getElementById('bgMusic');
 const musicBtn = document.getElementById('musicBtn');
 bgMusic.volume = 0.3;
 
-musicBtn.addEventListener('click', () => {
+// Auto-play on first user interaction
+function autoStart() {
+  bgMusic.play().then(() => {
+    musicBtn.textContent = '🔊';
+    musicBtn.classList.add('playing');
+  }).catch(() => {});
+  document.removeEventListener('click', autoStart);
+  document.removeEventListener('scroll', autoStart);
+  document.removeEventListener('touchstart', autoStart);
+}
+document.addEventListener('click', autoStart);
+document.addEventListener('scroll', autoStart);
+document.addEventListener('touchstart', autoStart);
+
+musicBtn.addEventListener('click', (e) => {
+  e.stopPropagation();
   if (bgMusic.paused) {
     bgMusic.play();
     musicBtn.textContent = '🔊';
