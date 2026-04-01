@@ -665,6 +665,49 @@ footer p { font-size: 0.85rem; }
   opacity: 1;
   transform: translateY(0);
 }
+
+/* ─── PARTICIPANT PHOTOS ─── */
+.participant-avatar img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  border-radius: 50%;
+}
+
+/* ─── MUSIC BUTTON ─── */
+#musicBtn {
+  position: fixed;
+  bottom: 1.5rem;
+  right: 1.5rem;
+  z-index: 999;
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  background: var(--green-deep);
+  border: 2px solid var(--gold);
+  color: white;
+  font-size: 1.3rem;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 4px 15px rgba(0,0,0,0.3);
+  transition: all 0.3s;
+}
+
+#musicBtn:hover {
+  transform: scale(1.1);
+  box-shadow: 0 6px 20px rgba(0,0,0,0.4);
+}
+
+#musicBtn.playing {
+  animation: pulse 2s infinite;
+}
+
+@keyframes pulse {
+  0%, 100% { box-shadow: 0 0 0 0 rgba(201,168,76,0.4); }
+  50% { box-shadow: 0 0 0 12px rgba(201,168,76,0); }
+}
 </style>
 </head>
 <body>
@@ -699,17 +742,17 @@ footer p { font-size: 0.85rem; }
     <p class="section-subtitle">8 places — 7 confirmés</p>
     <div class="participants-grid">
       <div class="participant">
-        <div class="participant-avatar">QD</div>
+        <div class="participant-avatar"><img src="photos/Quentin%20Carnaille.jpg" alt="Quentin"></div>
         <div class="participant-name">Quentin</div>
         <div class="participant-status">Organisateur</div>
       </div>
       <div class="participant">
-        <div class="participant-avatar">JD</div>
+        <div class="participant-avatar"><img src="photos/Jean.jpg" alt="Jean"></div>
         <div class="participant-name">Jean</div>
-        <div class="participant-status">Confirmé</div>
+        <div class="participant-status">Fondateur & Organisateur</div>
       </div>
       <div class="participant">
-        <div class="participant-avatar">AB</div>
+        <div class="participant-avatar"><img src="photos/Alex%20Borgoltz.jpg" alt="Alex"></div>
         <div class="participant-name">Alex</div>
         <div class="participant-status">Confirmé</div>
       </div>
@@ -724,12 +767,12 @@ footer p { font-size: 0.85rem; }
         <div class="participant-status">Confirmé</div>
       </div>
       <div class="participant">
-        <div class="participant-avatar">R</div>
+        <div class="participant-avatar"><img src="photos/Roukie.jpg" alt="Roukie"></div>
         <div class="participant-name">Roukie</div>
-        <div class="participant-status">Confirmé</div>
+        <div class="participant-status">Fondateur</div>
       </div>
       <div class="participant">
-        <div class="participant-avatar">MR</div>
+        <div class="participant-avatar"><img src="photos/Max%20Guillon.jpg" alt="Maxime"></div>
         <div class="participant-name">Maxime</div>
         <div class="participant-status">Confirmé</div>
       </div>
@@ -1123,6 +1166,54 @@ footer p { font-size: 0.85rem; }
           <img src="photos/1000178107.jpg" alt="" loading="lazy">
           <div class="caption">Le portrait Lincoln — quand tu joues devant un château</div>
         </div>
+        <div class="carousel-slide">
+          <img src="photos/IMG-20190428-WA0001.jpg" alt="" loading="lazy">
+          <div class="caption">Les débuts du FBGT — 2019</div>
+        </div>
+        <div class="carousel-slide">
+          <img src="photos/IMG-20190921-WA0045.jpg" alt="" loading="lazy">
+          <div class="caption">Première édition — automne 2019</div>
+        </div>
+        <div class="carousel-slide">
+          <img src="photos/20190922_152205.jpg" alt="" loading="lazy">
+          <div class="caption">Le groupe fondateur</div>
+        </div>
+        <div class="carousel-slide">
+          <img src="photos/IMG-20231124-WA0011.jpg" alt="" loading="lazy">
+          <div class="caption">Édition 2023 — on ne lâche rien</div>
+        </div>
+        <div class="carousel-slide">
+          <img src="photos/IMG-20231125-WA0019.jpg" alt="" loading="lazy">
+          <div class="caption">Parcours d'automne — 2023</div>
+        </div>
+        <div class="carousel-slide">
+          <img src="photos/IMG-20240615-WA0064.jpg" alt="" loading="lazy">
+          <div class="caption">Été 2024 — fairway en or</div>
+        </div>
+        <div class="carousel-slide">
+          <img src="photos/IMG-20240615-WA0075.jpg" alt="" loading="lazy">
+          <div class="caption">Sur le green — édition 2024</div>
+        </div>
+        <div class="carousel-slide">
+          <img src="photos/IMG-20240617-WA0005.jpg" alt="" loading="lazy">
+          <div class="caption">Dernière journée — 2024</div>
+        </div>
+        <div class="carousel-slide">
+          <img src="photos/IMG-20241130-WA0033.jpg" alt="" loading="lazy">
+          <div class="caption">FBGT automne 2024</div>
+        </div>
+        <div class="carousel-slide">
+          <img src="photos/IMG-20241201-WA0041.jpg" alt="" loading="lazy">
+          <div class="caption">Ambiance 19e trou — décembre 2024</div>
+        </div>
+        <div class="carousel-slide">
+          <img src="photos/IMG-20241201-WA0045.jpg" alt="" loading="lazy">
+          <div class="caption">Remise des prix — 2024</div>
+        </div>
+        <div class="carousel-slide">
+          <img src="photos/IMG-20250518-WA0066.jpg" alt="" loading="lazy">
+          <div class="caption">Printemps 2025 — la forme</div>
+        </div>
       </div>
       <div class="carousel-dots" id="dots"></div>
     </div>
@@ -1260,6 +1351,30 @@ carousel.addEventListener('scroll', () => {
   const sw = slides[0].offsetWidth + 16;
   const active = Math.round(carousel.scrollLeft / sw);
   dotsC.querySelectorAll('.carousel-dot').forEach((d, i) => d.classList.toggle('active', i === active));
+});
+</script>
+
+<!-- ═══ AUDIO PLAYER ═══ -->
+<audio id="bgMusic" loop preload="auto">
+  <source src="audio/bg-music.mp3" type="audio/mpeg">
+</audio>
+<button id="musicBtn" aria-label="Toggle music">🔇</button>
+
+<script>
+const bgMusic = document.getElementById('bgMusic');
+const musicBtn = document.getElementById('musicBtn');
+bgMusic.volume = 0.3;
+
+musicBtn.addEventListener('click', () => {
+  if (bgMusic.paused) {
+    bgMusic.play();
+    musicBtn.textContent = '🔊';
+    musicBtn.classList.add('playing');
+  } else {
+    bgMusic.pause();
+    musicBtn.textContent = '🔇';
+    musicBtn.classList.remove('playing');
+  }
 });
 </script>
 </body>
