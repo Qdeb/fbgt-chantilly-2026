@@ -528,6 +528,35 @@ section { padding: 5rem 1.5rem; }
   font-size: 0.85rem;
 }
 
+.carousel-arrow {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 42px;
+  height: 42px;
+  border-radius: 50%;
+  background: rgba(26,58,42,0.8);
+  border: 2px solid var(--gold);
+  color: var(--gold);
+  font-size: 1.2rem;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 5;
+  transition: all 0.2s;
+  backdrop-filter: blur(4px);
+}
+
+.carousel-arrow:hover { background: var(--green-deep); transform: translateY(-50%) scale(1.1); }
+.carousel-arrow.left { left: -1rem; }
+.carousel-arrow.right { right: -1rem; }
+
+@media (max-width: 768px) {
+  .carousel-arrow.left { left: 0.5rem; }
+  .carousel-arrow.right { right: 0.5rem; }
+}
+
 .carousel-dots { display: flex; justify-content: center; gap: 8px; margin-top: 1rem; }
 
 .carousel-dot {
@@ -1124,6 +1153,8 @@ footer p { font-size: 0.85rem; }
     <h2 class="section-title">Les Souvenirs</h2>
     <p class="section-subtitle">Flashback des éditions précédentes</p>
     <div class="carousel-wrapper">
+      <button class="carousel-arrow left" id="carouselLeft" aria-label="Previous">&#10094;</button>
+      <button class="carousel-arrow right" id="carouselRight" aria-label="Next">&#10095;</button>
       <div class="carousel-track" id="carousel">
         <div class="carousel-slide">
           <img src="photos/1000178117.jpg" alt="" loading="lazy">
@@ -1371,6 +1402,15 @@ let autoScroll = setInterval(() => {
 }, 3500);
 
 carousel.addEventListener('pointerdown', () => clearInterval(autoScroll));
+
+document.getElementById('carouselLeft').addEventListener('click', () => {
+  clearInterval(autoScroll);
+  carousel.scrollBy({ left: -(slides[0].offsetWidth + 16), behavior: 'smooth' });
+});
+document.getElementById('carouselRight').addEventListener('click', () => {
+  clearInterval(autoScroll);
+  carousel.scrollBy({ left: slides[0].offsetWidth + 16, behavior: 'smooth' });
+});
 </script>
 
 <!-- ═══ AUDIO PLAYER ═══ -->
