@@ -1441,15 +1441,13 @@ function toggleMusic() {
   }
 }
 
-// Auto-start on first click/tap anywhere except the music button
+// Auto-start on first user interaction anywhere except the music button
 function autoStart(e) {
   if (e.target === musicBtn || musicBtn.contains(e.target)) return;
   startMusic();
-  document.removeEventListener('click', autoStart);
-  document.removeEventListener('touchstart', autoStart);
+  ['click','touchend','pointerup','keydown'].forEach(ev => document.removeEventListener(ev, autoStart));
 }
-document.addEventListener('click', autoStart);
-document.addEventListener('touchstart', autoStart);
+['click','touchend','pointerup','keydown'].forEach(ev => document.addEventListener(ev, autoStart, { once: false }));
 
 musicBtn.addEventListener('click', toggleMusic);
 </script>
