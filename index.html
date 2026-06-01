@@ -204,6 +204,19 @@ section { padding: 5rem 1.5rem; }
 .participant-name { font-weight: 600; font-size: 0.9rem; }
 .participant-status { font-size: 0.75rem; color: var(--green-light); margin-top: 2px; }
 
+.participant-paid {
+  display: inline-block;
+  margin-top: 5px;
+  font-size: 0.62rem;
+  font-weight: 700;
+  color: var(--green-deep);
+  background: var(--gold-light);
+  padding: 1px 8px;
+  border-radius: 10px;
+  letter-spacing: 0.3px;
+}
+.participant-paid::before { content: '✓ '; }
+
 .participant-open .participant-avatar {
   background: transparent;
   border-style: dashed;
@@ -775,7 +788,7 @@ footer p { font-size: 0.85rem; }
 <section id="participants" class="fade-in">
   <div class="container">
     <h2 class="section-title">L'Équipe</h2>
-    <p class="section-subtitle">8 places — 8 confirmés</p>
+    <p class="section-subtitle">8 places — 8 confirmés · 6 parts réglées</p>
     <div class="participants-grid">
       <div class="participant">
         <div class="participant-avatar"><img src="photos/Quentin.jpg" alt="Quentin"></div>
@@ -786,21 +799,25 @@ footer p { font-size: 0.85rem; }
         <div class="participant-avatar"><img src="photos/Jean.jpg" alt="Jean"></div>
         <div class="participant-name">Jean</div>
         <div class="participant-status">Fondateur & Organisateur</div>
+        <span class="participant-paid">Payé</span>
       </div>
       <div class="participant">
         <div class="participant-avatar"><img src="photos/Alex%20Borgoltz.jpg" alt="Alex"></div>
         <div class="participant-name">Alex</div>
         <div class="participant-status">Confirmé</div>
+        <span class="participant-paid">Payé</span>
       </div>
       <div class="participant">
         <div class="participant-avatar">NB</div>
         <div class="participant-name">Nicolas</div>
         <div class="participant-status">Confirmé</div>
+        <span class="participant-paid">Payé</span>
       </div>
       <div class="participant">
-        <div class="participant-avatar">L</div>
-        <div class="participant-name">Louis</div>
+        <div class="participant-avatar">ÉA</div>
+        <div class="participant-name">Édouard</div>
         <div class="participant-status">Confirmé</div>
+        <span class="participant-paid">Payé</span>
       </div>
       <div class="participant">
         <div class="participant-avatar"><img src="photos/Roukie.jpg" alt="Roukie"></div>
@@ -808,14 +825,16 @@ footer p { font-size: 0.85rem; }
         <div class="participant-status">Fondateur</div>
       </div>
       <div class="participant">
-        <div class="participant-avatar"><img src="photos/Max%20Rochart.jpg" alt="Maxime"></div>
-        <div class="participant-name">Maxime</div>
+        <div class="participant-avatar">NL</div>
+        <div class="participant-name">Nicolas Lacan</div>
         <div class="participant-status">Confirmé</div>
+        <span class="participant-paid">Payé</span>
       </div>
       <div class="participant">
         <div class="participant-avatar"><img src="photos/Olivier%20Guillaume.jpg" alt="Olivier"></div>
         <div class="participant-name">Olivier</div>
         <div class="participant-status">Confirmé</div>
+        <span class="participant-paid">Payé</span>
       </div>
     </div>
   </div>
@@ -854,8 +873,8 @@ footer p { font-size: 0.85rem; }
             <span class="timeline-time">20h00</span>
             <div class="timeline-dot"></div>
             <div class="timeline-text">
-              <h4>Dîner à l'hôtel</h4>
-              <p>Restaurant Craft — Budget ~50 €/pers</p>
+              <h4>Dîner — Yucca Bar</h4>
+              <p>Table réservée — Budget ~50 €/pers</p>
             </div>
           </div>
         </div>
@@ -896,15 +915,15 @@ footer p { font-size: 0.85rem; }
             <div class="timeline-dot"></div>
             <div class="timeline-text">
               <h4>⛳ Golf — Château de Raray</h4>
-              <p>Parcours La Licorne — 18 trous, par 72 — Départs bloqués 14h–14h40</p>
+              <p>Parcours La Licorne — 18 trous, par 72 — Départs bloqués 14h–14h20</p>
             </div>
           </div>
           <div class="timeline-item">
-            <span class="timeline-time">20h00</span>
+            <span class="timeline-time">20h30</span>
             <div class="timeline-dot"></div>
             <div class="timeline-text">
-              <h4>Dîner à l'hôtel</h4>
-              <p>Restaurant du Grand Pavillon — Budget ~80 €/pers</p>
+              <h4>Dîner — Restaurant Craft</h4>
+              <p>Restaurant de l'hôtel — Table réservée (TheFork) — Budget ~80 €/pers</p>
             </div>
           </div>
         </div>
@@ -1068,9 +1087,9 @@ footer p { font-size: 0.85rem; }
           <tr><td>🏨 Hôtel (2 nuits)</td><td>Le Grand Pavillon — chambre double partagée</td><td style="text-align:right;">216 €</td></tr>
           <tr><td>⛳ Green-fee Raray</td><td>La Licorne — tarif négocié</td><td style="text-align:right;">84 €</td></tr>
           <tr><td>⛳ Green-fee Apremont</td><td>Apremont — tarif WE</td><td style="text-align:right;">~100 €</td></tr>
-          <tr><td>🍽️ Dîner vendredi</td><td>Restaurant hôtel</td><td style="text-align:right;">~50 €</td></tr>
+          <tr><td>🍽️ Dîner vendredi</td><td>Yucca Bar — réservé</td><td style="text-align:right;">~50 €</td></tr>
           <tr><td>🍽️ Déjeuner samedi</td><td>La Verrière — Menu E/P/D</td><td style="text-align:right;">~36 €</td></tr>
-          <tr><td>🍽️ Dîner samedi</td><td>Restaurant hôtel</td><td style="text-align:right;">~80 €</td></tr>
+          <tr><td>🍽️ Dîner samedi</td><td>Restaurant Craft — réservé (20h30)</td><td style="text-align:right;">~80 €</td></tr>
           <tr><td>🥐 Petits-déj (×2)</td><td>Buffet hôtel — option sur place</td><td style="text-align:right;">~50 €</td></tr>
           <tr><td>🥪 Sandwich dimanche</td><td>Panier repas golf Apremont</td><td style="text-align:right;">~15 €</td></tr>
           <tr class="budget-total"><td>TOTAL ESTIMÉ</td><td>Hors transport</td><td style="text-align:right;">~630 €</td></tr>
