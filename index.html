@@ -391,6 +391,47 @@ section { padding: 5rem 1.5rem; }
 .golf-stat .label { color: #888; }
 .golf-stat .value { font-weight: 600; }
 
+/* ─── DINING ─── */
+.dining-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(230px, 1fr));
+  gap: 1.5rem;
+}
+
+.dining-card {
+  position: relative;
+  border-radius: 16px;
+  overflow: hidden;
+  aspect-ratio: 4/3;
+  box-shadow: 0 4px 24px var(--shadow);
+}
+
+.dining-card img {
+  width: 100%; height: 100%;
+  object-fit: cover;
+  display: block;
+  transition: transform 0.4s;
+}
+
+.dining-card:hover img { transform: scale(1.05); }
+
+.dining-caption {
+  position: absolute;
+  bottom: 0; left: 0; right: 0;
+  padding: 2.5rem 1.2rem 1.1rem;
+  background: linear-gradient(transparent, rgba(0,0,0,0.78));
+  color: var(--white);
+}
+
+.dining-caption strong {
+  display: block;
+  font-family: 'Playfair Display', serif;
+  font-size: 1.15rem;
+  color: var(--gold-light);
+}
+
+.dining-caption span { font-size: 0.82rem; opacity: 0.92; }
+
 /* ─── BUDGET ─── */
 .budget-section { background: var(--white); }
 
@@ -767,6 +808,7 @@ footer p { font-size: 0.85rem; }
     <li><a href="#programme">Programme</a></li>
     <li><a href="#hotel">Hôtel</a></li>
     <li><a href="#golfs">Golfs</a></li>
+    <li><a href="#table">À table</a></li>
     <li><a href="#budget">Budget</a></li>
     <li><a href="#transport">Transport</a></li>
     <li><a href="#photos">Photos</a></li>
@@ -814,7 +856,7 @@ footer p { font-size: 0.85rem; }
         <span class="participant-paid">Payé</span>
       </div>
       <div class="participant">
-        <div class="participant-avatar">ÉA</div>
+        <div class="participant-avatar"><img src="photos/Edouard%20Augry.jpg" alt="Édouard"></div>
         <div class="participant-name">Édouard</div>
         <div class="participant-status">Confirmé</div>
         <span class="participant-paid">Payé</span>
@@ -825,7 +867,7 @@ footer p { font-size: 0.85rem; }
         <div class="participant-status">Fondateur</div>
       </div>
       <div class="participant">
-        <div class="participant-avatar">NL</div>
+        <div class="participant-avatar"><img src="photos/Nicolas%20Lacan.jpg" alt="Nicolas Lacan"></div>
         <div class="participant-name">Nicolas Lacan</div>
         <div class="participant-status">Confirmé</div>
         <span class="participant-paid">Payé</span>
@@ -1068,6 +1110,32 @@ footer p { font-size: 0.85rem; }
             120 hectares dans la pure tradition anglo-saxonne. Larges fairways, doglegs boisés, greens rapides. Panier sandwich pour le midi.
           </p>
         </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ═══ À TABLE ═══ -->
+<section id="table" class="fade-in">
+  <div class="container">
+    <h2 class="section-title">À Table</h2>
+    <p class="section-subtitle">Les bonnes tables du week-end</p>
+    <div class="dining-grid">
+      <div class="dining-card">
+        <img src="photos/yucca-terrasse.png" alt="Yucca Bar — terrasse" loading="lazy">
+        <div class="dining-caption"><strong>Yucca Bar</strong><span>Dîner du vendredi — la terrasse</span></div>
+      </div>
+      <div class="dining-card">
+        <img src="photos/yucca-table.png" alt="Yucca Bar — planche apéritif" loading="lazy">
+        <div class="dining-caption"><strong>Yucca Bar</strong><span>Planche & verre au coucher du soleil</span></div>
+      </div>
+      <div class="dining-card">
+        <img src="photos/craft-interieur.png" alt="Restaurant Craft" loading="lazy">
+        <div class="dining-caption"><strong>Restaurant Craft</strong><span>Dîner du samedi — 20h30</span></div>
+      </div>
+      <div class="dining-card">
+        <img src="photos/petit-dej-buffet.png" alt="Buffet petit-déjeuner" loading="lazy">
+        <div class="dining-caption"><strong>Petit-déjeuner buffet</strong><span>Le Grand Pavillon</span></div>
       </div>
     </div>
   </div>
