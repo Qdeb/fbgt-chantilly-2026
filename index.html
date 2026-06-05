@@ -432,6 +432,112 @@ section { padding: 5rem 1.5rem; }
 
 .dining-caption span { font-size: 0.82rem; opacity: 0.92; }
 
+/* ─── CHAMBRES ─── */
+.rooms-section { background: var(--cream); }
+
+.rooms-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 2rem;
+  max-width: 820px;
+  margin: 0 auto;
+}
+
+.room-card {
+  background: var(--white);
+  border-radius: 16px;
+  overflow: hidden;
+  box-shadow: 0 4px 24px var(--shadow);
+}
+
+.room-header {
+  background: var(--green-deep);
+  padding: 0.9rem 1.4rem;
+  display: flex;
+  align-items: center;
+  gap: 0.7rem;
+}
+
+.room-num {
+  font-family: 'Playfair Display', serif;
+  font-weight: 900;
+  color: var(--gold);
+  font-size: 1.5rem;
+  line-height: 1;
+}
+
+.room-occupants { color: #fff; font-weight: 600; font-size: 0.95rem; }
+
+.room-scene {
+  position: relative;
+  height: 220px;
+  background: linear-gradient(180deg, #e9efeb 0%, #e9efeb 62%, #d8cbb4 62%, #c9bca3 100%);
+  overflow: hidden;
+}
+
+.bed {
+  position: absolute;
+  left: 13%; right: 13%; top: 14%; height: 64%;
+  background: var(--green-pale);
+  border: 1px solid #ccd7cf;
+  border-radius: 10px;
+  box-shadow: 0 8px 16px rgba(0,0,0,0.12);
+}
+
+.bed::before {
+  content: '';
+  position: absolute;
+  left: 0; right: 0; bottom: 0; height: 58%;
+  background: linear-gradient(180deg, #cfe0d5, #bad2c3);
+  border-radius: 0 0 9px 9px;
+  box-shadow: inset 0 4px 0 rgba(255,255,255,0.55);
+}
+
+.pillow {
+  position: absolute;
+  width: 30%; height: 20%;
+  background: #fff;
+  border: 1px solid #e6e6e6;
+  border-radius: 8px;
+  box-shadow: inset 0 -3px 6px rgba(0,0,0,0.04);
+  z-index: 2;
+}
+
+.head {
+  position: absolute;
+  width: 52px; height: 52px;
+  border-radius: 50%;
+  object-fit: cover;
+  border: 3px solid #fff;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.28);
+  z-index: 4;
+}
+
+.floor-shadow {
+  position: absolute;
+  width: 52px; height: 13px;
+  border-radius: 50%;
+  background: rgba(0,0,0,0.18);
+  transform: translate(-50%, -50%);
+  z-index: 3;
+}
+
+.accent {
+  position: absolute;
+  font-size: 1.15rem;
+  transform: translate(-50%, -50%);
+  z-index: 5;
+}
+
+.room-caption {
+  padding: 0.9rem 1.4rem 1.2rem;
+  font-size: 0.86rem;
+  color: #555;
+  line-height: 1.45;
+}
+
+.room-caption strong { color: var(--green-deep); }
+
 /* ─── BUDGET ─── */
 .budget-section { background: var(--white); }
 
@@ -807,6 +913,7 @@ footer p { font-size: 0.85rem; }
   <ul class="nav-links">
     <li><a href="#programme">Programme</a></li>
     <li><a href="#hotel">Hôtel</a></li>
+    <li><a href="#chambres">Chambres</a></li>
     <li><a href="#golfs">Golfs</a></li>
     <li><a href="#table">À table</a></li>
     <li><a href="#budget">Budget</a></li>
@@ -1066,6 +1173,86 @@ footer p { font-size: 0.85rem; }
           <a href="https://legrandpavillonchantilly.com/fr/" style="color:var(--gold);" target="_blank">Site web</a>
         </p>
       </div>
+    </div>
+  </div>
+</section>
+
+<!-- ═══ CHAMBRES ═══ -->
+<section id="chambres" class="rooms-section fade-in">
+  <div class="container">
+    <h2 class="section-title">Les Chambres</h2>
+    <p class="section-subtitle">4 chambres, 4 binômes — qualité de sommeil non garantie</p>
+    <div class="rooms-grid">
+
+      <!-- Chambre 1 -->
+      <div class="room-card">
+        <div class="room-header">
+          <span class="room-num">1</span>
+          <span class="room-occupants">Quentin &amp; Édouard Augry</span>
+        </div>
+        <div class="room-scene">
+          <div class="bed"></div>
+          <div class="pillow" style="left:20%; top:20%;"></div>
+          <div class="pillow" style="left:50%; top:20%;"></div>
+          <img class="head" src="photos/Quentin.jpg" alt="Quentin" style="left:34%; top:28%; transform:translate(-50%,-50%) rotate(-7deg);">
+          <img class="head" src="photos/Edouard%20Augry.jpg" alt="Édouard" style="left:64%; top:28%; transform:translate(-50%,-50%) rotate(7deg);">
+          <span class="accent" style="left:78%; top:12%;">💤</span>
+        </div>
+        <div class="room-caption"><strong>Côte à côte, apaisés.</strong> Deux anges endormis. Pour l'instant.</div>
+      </div>
+
+      <!-- Chambre 2 -->
+      <div class="room-card">
+        <div class="room-header">
+          <span class="room-num">2</span>
+          <span class="room-occupants">Nicolas Bocahut &amp; Jean Dutertre</span>
+        </div>
+        <div class="room-scene">
+          <div class="bed"></div>
+          <div class="pillow" style="left:16%; top:19%;"></div>
+          <div class="pillow" style="left:54%; top:60%;"></div>
+          <img class="head" src="photos/Nicolas%20Bocahut.jpg" alt="Nicolas Bocahut" style="left:31%; top:27%; transform:translate(-50%,-50%) rotate(0deg);">
+          <img class="head" src="photos/Jean.jpg" alt="Jean" style="left:69%; top:68%; transform:translate(-50%,-50%) rotate(180deg);">
+          <span class="accent" style="left:50%; top:47%;">🦶</span>
+        </div>
+        <div class="room-caption"><strong>Tête-bêche.</strong> Les pieds de Jean au visage de Nicolas. Une nuit longue.</div>
+      </div>
+
+      <!-- Chambre 3 -->
+      <div class="room-card">
+        <div class="room-header">
+          <span class="room-num">3</span>
+          <span class="room-occupants">Nicolas Lacan &amp; Roukie</span>
+        </div>
+        <div class="room-scene">
+          <div class="bed"></div>
+          <div class="pillow" style="left:22%; top:20%;"></div>
+          <img class="head" src="photos/Nicolas%20Lacan.jpg" alt="Nicolas Lacan" style="left:37%; top:28%; transform:translate(-50%,-50%) rotate(-6deg);">
+          <div class="floor-shadow" style="left:84%; top:94%;"></div>
+          <img class="head" src="photos/Roukie.jpg" alt="Roukie" style="left:84%; top:86%; transform:translate(-50%,-50%) rotate(24deg);">
+          <span class="accent" style="left:73%; top:72%;">💥</span>
+        </div>
+        <div class="room-caption"><strong>Un dans le lit, un par terre.</strong> Roukie a tenté un créneau de nuit… et a fini au sol.</div>
+      </div>
+
+      <!-- Chambre 4 -->
+      <div class="room-card">
+        <div class="room-header">
+          <span class="room-num">4</span>
+          <span class="room-occupants">Olivier Guillaume &amp; Alex Borgoltz</span>
+        </div>
+        <div class="room-scene">
+          <div class="bed"></div>
+          <div class="pillow" style="left:18%; top:19%;"></div>
+          <div class="pillow" style="left:52%; top:19%;"></div>
+          <img class="head" src="photos/Olivier%20Guillaume.jpg" alt="Olivier" style="left:35%; top:29%; transform:translate(-50%,-50%) rotate(2deg);">
+          <img class="head" src="photos/Alex%20Borgoltz.jpg" alt="Alex" style="left:67%; top:25%; transform:translate(-50%,-50%) rotate(12deg);">
+          <span class="accent" style="left:80%; top:14%;">🥶</span>
+          <span class="accent" style="left:30%; top:54%;">🛌</span>
+        </div>
+        <div class="room-caption"><strong>Le vol de couette.</strong> Olivier a tout pris. Alex grelotte au bord du matelas.</div>
+      </div>
+
     </div>
   </div>
 </section>
