@@ -432,6 +432,57 @@ section { padding: 5rem 1.5rem; }
 
 .dining-caption span { font-size: 0.82rem; opacity: 0.92; }
 
+/* ─── CHAMBRES ─── */
+.rooms-section { background: var(--cream); }
+
+.rooms-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 2rem;
+  max-width: 820px;
+  margin: 0 auto;
+}
+
+.room-card {
+  background: var(--white);
+  border-radius: 16px;
+  overflow: hidden;
+  box-shadow: 0 4px 24px var(--shadow);
+}
+
+.room-header {
+  background: var(--green-deep);
+  padding: 0.9rem 1.4rem;
+  display: flex;
+  align-items: center;
+  gap: 0.7rem;
+}
+
+.room-num {
+  font-family: 'Playfair Display', serif;
+  font-weight: 900;
+  color: var(--gold);
+  font-size: 1.5rem;
+  line-height: 1;
+}
+
+.room-occupants { color: #fff; font-weight: 600; font-size: 0.95rem; }
+
+.room-scene { position: relative; line-height: 0; }
+
+.bed-svg { display: block; width: 100%; height: auto; }
+
+.room-img { display: block; width: 100%; height: auto; }
+
+.room-caption {
+  padding: 0.9rem 1.4rem 1.2rem;
+  font-size: 0.86rem;
+  color: #555;
+  line-height: 1.45;
+}
+
+.room-caption strong { color: var(--green-deep); }
+
 /* ─── BUDGET ─── */
 .budget-section { background: var(--white); }
 
@@ -807,6 +858,7 @@ footer p { font-size: 0.85rem; }
   <ul class="nav-links">
     <li><a href="#programme">Programme</a></li>
     <li><a href="#hotel">Hôtel</a></li>
+    <li><a href="#chambres">Chambres</a></li>
     <li><a href="#golfs">Golfs</a></li>
     <li><a href="#table">À table</a></li>
     <li><a href="#budget">Budget</a></li>
@@ -850,8 +902,8 @@ footer p { font-size: 0.85rem; }
         <span class="participant-paid">Payé</span>
       </div>
       <div class="participant">
-        <div class="participant-avatar">NB</div>
-        <div class="participant-name">Nicolas</div>
+        <div class="participant-avatar"><img src="photos/Nicolas%20Bocahut.jpg" alt="Nicolas Bocahut"></div>
+        <div class="participant-name">Nicolas Bocahut</div>
         <div class="participant-status">Confirmé</div>
         <span class="participant-paid">Payé</span>
       </div>
@@ -1066,6 +1118,65 @@ footer p { font-size: 0.85rem; }
           <a href="https://legrandpavillonchantilly.com/fr/" style="color:var(--gold);" target="_blank">Site web</a>
         </p>
       </div>
+    </div>
+  </div>
+</section>
+
+<!-- ═══ CHAMBRES ═══ -->
+<section id="chambres" class="rooms-section fade-in">
+  <div class="container">
+    <h2 class="section-title">Les Chambres</h2>
+    <p class="section-subtitle">4 chambres, 4 binômes — qualité de sommeil non garantie</p>
+    <div class="rooms-grid">
+
+      <!-- Chambre 1 -->
+      <div class="room-card">
+        <div class="room-header">
+          <span class="room-num">1</span>
+          <span class="room-occupants">Quentin &amp; Édouard Augry</span>
+        </div>
+        <div class="room-scene">
+          <img class="room-img" src="photos/chambre-1.png" alt="Chambre 1 — Quentin et Édouard côte à côte, paisibles" loading="lazy">
+        </div>
+        <div class="room-caption"><strong>Côte à côte, apaisés.</strong> Deux anges endormis. Pour l'instant.</div>
+      </div>
+
+      <!-- Chambre 2 -->
+      <div class="room-card">
+        <div class="room-header">
+          <span class="room-num">2</span>
+          <span class="room-occupants">Nicolas Bocahut &amp; Jean Dutertre</span>
+        </div>
+        <div class="room-scene">
+          <img class="room-img" src="photos/chambre-2.png" alt="Chambre 2 — Nicolas Bocahut et Jean en tête-bêche" loading="lazy">
+        </div>
+        <div class="room-caption"><strong>Tête-bêche.</strong> Les pieds de Jean au visage de Nicolas. Une nuit longue.</div>
+      </div>
+
+      <!-- Chambre 3 -->
+      <div class="room-card">
+        <div class="room-header">
+          <span class="room-num">3</span>
+          <span class="room-occupants">Nicolas Lacan &amp; Roukie</span>
+        </div>
+        <div class="room-scene">
+          <img class="room-img" src="photos/chambre-3.png" alt="Chambre 3 — Nicolas Lacan dans le lit, Roukie par terre" loading="lazy">
+        </div>
+        <div class="room-caption"><strong>Un dans le lit, un par terre.</strong> Roukie a tenté un créneau de nuit… et a fini au sol.</div>
+      </div>
+
+      <!-- Chambre 4 -->
+      <div class="room-card">
+        <div class="room-header">
+          <span class="room-num">4</span>
+          <span class="room-occupants">Olivier Guillaume &amp; Alex Borgoltz</span>
+        </div>
+        <div class="room-scene">
+          <img class="room-img" src="photos/chambre-4.png" alt="Chambre 4 — Olivier emmitouflé, Alex grelotte" loading="lazy">
+        </div>
+        <div class="room-caption"><strong>Le vol de couette.</strong> Olivier a tout pris. Alex grelotte au bord du matelas.</div>
+      </div>
+
     </div>
   </div>
 </section>
